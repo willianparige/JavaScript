@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+  <script>
+    var marca = ["Ford","Mercedes","Fiat","Ferrari","Honda","Jaguar"];
+
+    $(document).ready(function() {
+      $.each(marca, function(i, value) {
+        $("#dropmarca").append(
+          $('<option/>')
+            .attr('value', value)     
+            .text(value)
+          );
+        });
+    });
+  </script>
+  <body>
+    Marca: <select id="dropmarca"></select>
+  </body>
+</html>
