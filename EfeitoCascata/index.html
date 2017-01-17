@@ -1,0 +1,44 @@
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js">
+  </script>
+  <script>
+    //Listagem dos Carros
+    var marca = {"Chevrolet":"chevrolet","Ford":"ford","Fiat":"fiat"};
+
+    //Listagem dos modelos
+    var chevrolet = {"Camaro":"camaro","Celta":"celta","Cruze":"cruze"};
+    var ford = {"Edge":"edge","Fiesta":"fiesta","Focus":"focus"};
+    var fiat = {"Doblo":"doblo","Fiat 500":"fiat500","Palio":"palio"}; 
+
+    $(document).ready(function() {
+      //Preenche o combo Marca
+      $.each(marca, function(text, value) {
+        $("#dropmarca").append(
+          $('<option/>')
+               .attr('value', value)     
+               .text(text)
+        );
+      });
+
+      //Evento do dropMarca para preencher o dropModelo
+      $('#dropmarca').on('change', function() {
+        
+        //Limpa o DropDownList Modelo antes de preencher
+        $('#dropmodelo').empty();
+
+        //Preenche com os modelos a partir da marca selecionada
+        $.each(eval(this.value), function(text, value) {    
+          $("#dropmodelo").append(
+            $('<option/>')
+                .attr('value', value)     
+                .text(text)
+          );
+        });
+      });   
+    });
+  </script>
+  <body>
+    Marca:  <select id="dropmarca"></select>
+    Modelo: <select id="dropmodelo"></select>
+  </body>
+</html>
