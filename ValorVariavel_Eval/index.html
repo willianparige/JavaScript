@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<script>
+  var aviso = "Exibindo aviso utilizando eval"; 
+
+  function carrega(){
+    alert(eval('aviso'));
+	
+	var x = 10;
+    var y = 20;
+
+    alert(eval("x + y"));
+    alert(eval("x * y"));
+    alert(eval("x - y"));
+  }
+  
+</script>
+<body onload="carrega()">
+</body>
+</html>
